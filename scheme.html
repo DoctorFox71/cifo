@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Cifo</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230910113356">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class=" menu__item header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></li>
+							<li class="menu__item"><a href="index.html#top-slider" class="menu__link">ГЛАВНАЯ</a></li>
+							<li class="menu__item"><a href="index.html#about-us" class="menu__link">О&nbspНАС</a></li>
+							<li class="menu__item"><a href="index.html#catalog" class="menu__link">КАТАЛОГ ПРОДУКЦИИ</a>
+							</li>
+							<li class="menu__item"><a href="index.html#schemes" class="menu__link">СХЕМЫ ПИТАНИЯ</a></li>
+							<li class="menu__item"><a data-goto=".footer" href="#" class="menu__link">КОНТАКТЫ</a></li>
+							<div class="social__raw">
+								<li class="menu__item social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a>
+								</li>
+
+						</ul>
+					</nav>
+				</div>
+				<div class="header__social">
+					<ul class="social__list media">
+						<li class="social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a></li>
+					</ul>
+				</div>
+				<button class="header__contact-us" data-popup=".popup">СВЯЗАТЬСЯ С НАМИ</button>
+				<button class="contacts-us__mobile" data-popup=".popup"><img src="img/tel-icon.svg" alt=""></button>
+			</div>
+		</header>
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__form">
+						<div class="form__title">ЗАПОЛНИТЕ ФОРМУ</div>
+						<div class="form__subtitle">И мы свяжемся с Вами в ближайшее время!</div>
+						<div id="notification" style="display: none;">
+							Данные успешно отправлены!
+							<button id="closeNotification">ОК</button>
+						</div>
+						<form method="post" action="send.php" class="form__areas">
+							<input name="NAME" autocomplete="on" placeholder="Ваше имя" class="name-area"></input>
+							<input name="PHONE" required="true" pattern="(\+375|80)(29|25|44|33|17)[0-9]{7}" placeholder="Ваш номер телефона" class="tel-area"></input>
+							<textarea name="MESSAGE" wrap="hard" placeholder="Напишите Ваше сообщение..." class="message-area"></textarea>
+							<button data-popup="#main_popup" type="submit" id="submit-button" class="form__button send-button">ОТПРАВИТЬ</button>
+						</form>
+					</div>
+					<div class="popup__contact-us">
+						<div class="contact-us__title">СВЯЗАТЬСЯ С НАМИ</div>
+						<div class="contact-us__tel">+375 (44) 750-98-99</div>
+						<div class="contact-us__mail">saif.belarus@gmail.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			// При загрузке страницы
+			document.addEventListener("DOMContentLoaded", function() {
+				// При нажатии кнопки "ОК" в уведомлении
+				document.getElementById("closeNotification").addEventListener("click", function() {
+					document.getElementById("notification").style.display = "none";
+				});
+			});
+
+			// Функция для отображения уведомления
+			function showNotification() {
+				document.getElementById("notification").style.display = "block";
+			}
+		</script>
+		<div id="main_popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="main-popup__text-back">
+						Спасибо за то что выбрали нас !
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main class="page">
+			<div class="product-bg"></div>
+			<section class="schemes">
+				<div class="schemes__container">
+					<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+					<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть уточнены согласно
+						конкретным
+						почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+						специалистами
+					</div>
+					<div data-tabs data-tabs-hash class="scheme-tabs">
+						<nav data-tabs-titles class="scheme-tabs__navigation">
+							<button type="button" class="scheme-tabs__title _tab-active">
+								<a class="block__adress" href="#">
+									<div class="raw__block">
+										<div class="block__title-first">Ягодные
+											культуры</div>
+										<div class="block__arrow"></div>
+										<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+									</div>
+								</a>
+							</button>
+							<button type="button" class="scheme-tabs__title ">
+								<a class="block__adress" href="#">
+									<div class="raw__block">
+										<div class="block__title-first">Овощные
+											культуры</div>
+										<div class="block__arrow"></div>
+										<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+									</div>
+								</a>
+							</button>
+							<button type="button" class="scheme-tabs__title ">
+								<a class="block__adress" href="#">
+									<div class="raw__block">
+										<div class="block__title-first">Садовые
+											культуры</div>
+										<div class="block__arrow"></div>
+										<div class="block__image"><picture><source srcset="img/scheme-img-3.webp" type="image/webp"><img src="img/scheme-img-3.png" alt=""></picture></div>
+									</div>
+								</a>
+							</button>
+							<button type="button" class="scheme-tabs__title ">
+								<a class="block__adress" href="#">
+									<div class="raw__block">
+										<div class="block__title-first">Полевые
+											культуры</div>
+										<div class="block__arrow"></div>
+										<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+									</div>
+								</a>
+							</button>
+							<button type="button" class="scheme-tabs__title ">
+								<a class="block__adress" href="#">
+									<div class="raw__block">
+										<div class="block__title-first">Декоративные
+											культуры</div>
+										<div class="block__arrow"></div>
+										<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+									</div>
+								</a>
+							</button>
+						</nav>
+
+						<div data-tabs-body class="scheme-tabs__content">
+							<div class="scheme-tabs__body berrys">
+								<div data-tabs class="tabs">
+									<nav data-tabs-titles class="tabs__navigation">
+										<button type="button" class="tabs__title _tab-active ">
+											<div class="subclass-tab strawberry ">
+												<picture><source srcset="img/strawberry-img.webp" type="image/webp"><img class="subclass-tab__image" src="img/strawberry-img.png" alt=""></picture>
+												<div class="subclass-tab__title">клубника</div>
+											</div>
+										</button>
+										<button type="button" class="tabs__title ">
+											<div class="subclass-tab">
+												<picture><source srcset="img/raspberry-img.webp" type="image/webp"><img class="subclass-tab__image" src="img/raspberry-img.png" alt=""></picture>
+												<div class="subclass-tab__title">малина</div>
+											</div>
+										</button>
+										<button type="button" class="tabs__title">
+											<div class="subclass-tab">
+												<picture><source srcset="img/blueberry-img.webp" type="image/webp"><img class="subclass-tab__image" src="img/blueberry-img.png" alt=""></picture>
+												<div class="subclass-tab__title">черника</div>
+											</div>
+										</button>
+									</nav>
+									<div data-tabs-body class="tabs__content">
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+													ПОДКОРМКА</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">ERT 23 PLUS *
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">0,5 л / га</div>
+												<div class="first-grid__div7 grid-text__block-text">С начала завязывания плодов, обрабатывать
+													каждые 7 - 10 дней</div>
+												<div class="first-grid__div8 grid-text__block-text">Увеличить размер плода и плотность</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">SINERGON 2000 *</div>
+												<div class="first-grid__div10 grid-text__block-text">2 л / га
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">После пересадки и во время вегетативного
+													роста 2-3 внесения с
+													интервалом в 7 - 10 дней</div>
+												<div class="first-grid__div12 grid-text__block-text">Преодолеть стресс от пересадки и поддержать
+													вегетативный рост
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text">
+													<p>ERT 23 PLUS *</p>
+													<p>+</p>
+													<p>SINERGON 2000 *</p>
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>1 л / га</p>
+													<p>+</p>
+													<p>2 л / га</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">С момента появления первых видимых бутонов,
+													1 - 2 обработки с интервалом 7 - 10 дней</div>
+												<div class="first-grid__div16 grid-text__block-text">Улучшить завязывание плодов</div>
+												<div class="first-grid__div17 grid-text__subtitle-text">CET 46 GREEN</div>
+												<div class="first-grid__div18 grid-text__block-text">4 л / га
+												</div>
+												<div class="first-grid__div19 grid-text__block-text">2 внесения за 10 - 12 и 5 -6 дней перед
+													сбором урожая</div>
+												<div class="first-grid__div20 grid-text__block-text">Улучшить и сделать равномерным окрашивание
+													плодов</div>
+											</div>
+											<div class="second-grid">
+												<div class="second-grid__div1 grid-text__title">ПРОДУКТ </div>
+												<div class="second-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="second-grid__div3 grid-text__title">ФЕРТИГАЦИЯ</div>
+												<div class="second-grid__div4 grid-text__title">ЦЕЛЬ </div>
+												<div class="second-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 13.40.13</p>
+												</div>
+												<div class="second-grid__div6 grid-text__block-text">
+													<p>2 л</p>
+													<p>+</p>
+													<p>25 кг</p>
+												</div>
+												<div class="second-grid__div7 grid-text__block-text">После пересадки, 1 -2 внесения с интервалом
+													7 - 10 дней</div>
+												<div class="second-grid__div8 grid-text__block-text">Простимулировать рост корней и снизить
+													стресс от пересадки</div>
+												<div class="second-grid__div9 grid-text__subtitle-text">
+													<p>SUPERNAT 93</p>
+													<p>+ </p>
+													<p>IDROFLORAL 20-20-20</p>
+												</div>
+												<div class="second-grid__div10 grid-text__block-text">
+													<p>10 - 15 л</p>
+													<p>+</p>
+													<p>25 кг</p>
+												</div>
+												<div class="second-grid__div11 grid-text__block-text">В течение вегетативного роста, 2 внесения
+													с интервалом 7 - 10
+													дней</div>
+												<div class="second-grid__div12 grid-text__block-text">Простимулировать рост растений и увеличить
+													поглощение
+													питательных веществ</div>
+												<div class="second-grid__div13 grid-text__subtitle-text left-border">
+													<p>SUPERNAT 93</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 12-11-22 + 8 CaO</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 15-5-30 + 3 MgO</p>
+												</div>
+												<div class="second-grid__div14 grid-text__block-text">
+													<p>10 - 15 л</p>
+													<p>+</p>
+													<p>25 кг</p>
+												</div>
+												<div class="second-grid__div15 grid-text__block-text">
+													В течение цветения и роста плодов, несколько внесений с интервалом
+													в 7 -10 дней
+												</div>
+												<div class="second-grid__div16 grid-text__block-text right-border">Простимулировать завязывание
+													плодов и рост
+													плодов и увеличить
+													поглощение питательных веществ
+												</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw horizontal-scroller" id="horizontal-scroller">
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-2" class="catalog-menu__item set-46-green">
+														<div class="item__image"><picture><source srcset="img/catalog-product-2.webp" type="image/webp"><img src="img/catalog-product-2.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СЕТ 46 ГРИН</div>
+													</a>
+													<a href="product.html#slide-1" class="catalog-menu__item betalga">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-5" class="catalog-menu__item supernat-93">
+														<div class=" item__image"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture>
+														</div>
+														<div class="item__name">СУПЕРНАТ 93</div>
+													</a>
+													<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+														<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+													</a>
+													<a href="product.html#slide-6" class="catalog-menu__item idrofloral-12-11-22">
+														<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 12-11-22</div>
+													</a>
+													<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+														<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+													ПОДКОРМКА</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">ERT 23 PLUS *
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">1,5 л / га</div>
+												<div class="first-grid__div7 grid-text__block-text">Во время вегетативного пробуждения</div>
+												<div class="first-grid__div8 grid-text__block-text">Для того, чтобы простимулировать равномерное
+													распускание почек</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">SINERGON 2000 *</div>
+												<div class="first-grid__div10 grid-text__block-text">2 л / га
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">При вегетативном росте</div>
+												<div class="first-grid__div12 grid-text__block-text">Улучшить вегетативный рост
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text">
+													<p>ERT 23 PLUS *</p>
+													<p>+</p>
+													<p>SINERGON 2000 *</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 12.11.22+8 CaO</p>
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>1 л/га</p>
+													<p>+</p>
+													<p>2 л/га</p>
+													<p>+</p>
+													<p>2,5 кг/га</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">С момента перед цветением до увеличения
+													размера плода</div>
+												<div class="first-grid__div16 grid-text__block-text">Для улучшения цветения, завязывания и
+													увеличения плодов</div>
+												<div class="first-grid__div17 grid-text__subtitle-text">CET 46 GREEN</div>
+												<div class="first-grid__div18 grid-text__block-text">4-5 л/га
+												</div>
+												<div class="first-grid__div19 grid-text__block-text">Во время созревание плодов, Применить за 15
+													и 7 дней перед сбором урожая</div>
+												<div class="first-grid__div20 grid-text__block-text">Улучшить равномерность окрашивание и
+													содержание сахара</div>
+											</div>
+											<div class="second-grid">
+												<div class="second-grid__div1 grid-text__title">ПРОДУКТ </div>
+												<div class="second-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="second-grid__div3 grid-text__title">ФЕРТИГАЦИЯ</div>
+												<div class="second-grid__div4 grid-text__title">ЦЕЛЬ </div>
+												<div class="second-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA</p>
+													<p>+</p>
+													<p>IDROFLORAL 13.40.13</p>
+												</div>
+												<div class="second-grid__div6 grid-text__block-text">
+													<p>2 - 2.5 л/га</p>
+													<p>+</p>
+													<p>20-25 кг/га</p>
+												</div>
+												<div class="second-grid__div7 grid-text__block-text">1-2 внесения при вегетативном отрастании
+													или после пересадки</div>
+												<div class="second-grid__div8 grid-text__block-text">Простимулировать развитие корней и
+													поставить NPK</div>
+												<div class="second-grid__div9 grid-text__subtitle-text left-border">
+													<p>IDROFLORAL PLUS 15.5.30
+														(или 12.11.22+8 CaO)
+													</p>
+													<p>+ </p>
+													<p>SUPERNAT 93</p>
+												</div>
+												<div class="second-grid__div10 grid-text__block-text">
+													<p>20-25 кг/га</p>
+													<p>+</p>
+													<p>15- 20 л/га</p>
+												</div>
+												<div class="second-grid__div11 grid-text__block-text">Внесения каждые 10-15 дней начиная с
+													завязывания плодов</div>
+												<div class="second-grid__div12 grid-text__block-text right-border">Увеличить поглощение
+													питательных веществ
+													во время роста плодов</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw horizontal-scroller" id="horizontal-scroller">
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-2" class="catalog-menu__item set-46-green">
+														<div class="item__image"><picture><source srcset="img/catalog-product-2.webp" type="image/webp"><img src="img/catalog-product-2.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СЕТ 46 ГРИН</div>
+													</a>
+													<a href="product.html#slide-6" class="catalog-menu__item idrofloral-12-11-22">
+														<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 12-11-22</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+														<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+													</a>
+													<a href="product.html#slide-5" class="catalog-menu__item supernat-93">
+														<div class=" item__image"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture>
+														</div>
+														<div class="item__name">СУПЕРНАТ 93</div>
+													</a>
+													<a href="product.html#slide-1" class="catalog-menu__item betalga">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+													ПОДКОРМКА</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">ERT 23 PLUS *
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">1,5 л / га</div>
+												<div class="first-grid__div7 grid-text__block-text">Во время вегетативного пробуждения</div>
+												<div class="first-grid__div8 grid-text__block-text">Для того, чтобы простимулировать равномерное
+													распускание почек</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">SINERGON 2000 *</div>
+												<div class="first-grid__div10 grid-text__block-text">2 л / га
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">При вегетативном росте</div>
+												<div class="first-grid__div12 grid-text__block-text">Улучшить вегетативный рост
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text">
+													<p>ERT 23 PLUS *</p>
+													<p>+</p>
+													<p>SINERGON 2000 *</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 12.11.22+8 CaO</p>
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>1.5 л / га</p>
+													<p>+</p>
+													<p>1 л / га</p>
+													<p>+</p>
+													<p>2.5 кг/га</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">С момента перед цветением до увеличения
+													размера плода</div>
+												<div class="first-grid__div16 grid-text__block-text">Для улучшения цветения, завязывания и
+													увеличения плодов</div>
+												<div class="first-grid__div17 grid-text__subtitle-text">CET 46 GREEN</div>
+												<div class="first-grid__div18 grid-text__block-text">4-5 л/га
+												</div>
+												<div class="first-grid__div19 grid-text__block-text">Во время созревание плодов, Применить за 15
+													и 7 дней перед сбором урожая</div>
+												<div class="first-grid__div20 grid-text__block-text">Улучшить равномерность окрашивание и
+													содержание сахара</div>
+											</div>
+											<div class="second-grid">
+												<div class="second-grid__div1 grid-text__title">ПРОДУКТ </div>
+												<div class="second-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="second-grid__div3 grid-text__title">ФЕРТИГАЦИЯ</div>
+												<div class="second-grid__div4 grid-text__title">ЦЕЛЬ </div>
+												<div class="second-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 13.40.13</p>
+												</div>
+												<div class="second-grid__div6 grid-text__block-text">
+													<p>2 - 2.5 л/га</p>
+													<p>+</p>
+													<p>20 - 25 кг/га</p>
+												</div>
+												<div class="second-grid__div7 grid-text__block-text">1-2 внесения при вегетативном отрастании
+													или после пересадки</div>
+												<div class="second-grid__div8 grid-text__block-text">Простимулировать развитие корней и
+													поставить NPK</div>
+												<div class="second-grid__div9 grid-text__subtitle-text left-border">
+													<p>IDROFLORAL
+														PLUS 15.5.30
+														(или 12.11.22+8 CaO)
+													</p>
+													<p>+ </p>
+													<p>SUPERNAT 93</p>
+												</div>
+												<div class="second-grid__div10 grid-text__block-text">
+													<p>20 - 25 кг/га</p>
+													<p>+</p>
+													<p>15 - 20 л/га</p>
+												</div>
+												<div class="second-grid__div11 grid-text__block-text">Внесения каждые 10-15 дней начиная с
+													завязывания плодов</div>
+												<div class="second-grid__div12 grid-text__block-text right-border">Увеличить поглощение
+													питательных веществ
+													во время роста плодов</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw horizontal-scroller" id="horiz">
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-2" class="catalog-menu__item set-46-green">
+														<div class="item__image"><picture><source srcset="img/catalog-product-2.webp" type="image/webp"><img src="img/catalog-product-2.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СЕТ 46 ГРИН</div>
+													</a>
+													<a href="product.html#slide-6" class="catalog-menu__item idrofloral-12-11-22">
+														<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 12-11-22</div>
+													</a>
+													<a href="product.html#slide-1" class="catalog-menu__item betalga">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-5" class="catalog-menu__item supernat-93">
+														<div class=" item__image"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture>
+														</div>
+														<div class="item__name">СУПЕРНАТ 93</div>
+													</a>
+													<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+														<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="scheme-tabs__body vegetables">
+								<div data-tabs class="tabs ">
+									<nav data-tabs-titles class="tabs__navigation ">
+										<button type="button" class="tabs__title _tab-active">
+											<div class="subclass-tab">
+												<picture><source srcset="img/cucumber.webp" type="image/webp"><img class="subclass-tab__image" src="img/cucumber.jpg" alt=""></picture>
+												<div class="subclass-tab__title">Огурец</div>
+											</div>
+										</button>
+										<button type="button" class="tabs__title ">
+											<div class="subclass-tab">
+												<picture><source srcset="img/potato.webp" type="image/webp"><img class="subclass-tab__image" src="img/potato.jpg" alt=""></picture>
+												<div class="subclass-tab__title">Картофель</div>
+											</div>
+										</button>
+									</nav>
+
+									<div data-tabs-body class="tabs-vegetablles__content">
+										<div class="tabs__body ogurec">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+													ПОДКОРМКА</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">SINERGON 2000*
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">200 мл</div>
+												<div class="first-grid__div7 grid-text__block-text">2 внесения после пересадки
+													с интервалом в 7 - 10 дней
+												</div>
+												<div class="first-grid__div8 grid-text__block-text">Преодолеть стресс от пересадки и поддержать
+													вегетативный рост и снизить стресс от неблагоприятных усовиях ОС</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">ERT 23 PLUS*</div>
+												<div class="first-grid__div10 grid-text__block-text">100-150 мл
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">Начиная с первых видимых цветов, 1-2
+													внесения с интервалом в 7 дней</div>
+												<div class="first-grid__div12 grid-text__block-text">Простимулировать цветение и завязывание
+													плодов
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text left-border">
+													<p>ERT 23 PLUS *</p>
+													<p>+</p>
+													<p>BETALGA</p>
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>100 мл</p>
+													<p>+</p>
+													<p>50 мл</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">После завязывания первых плодов, 2-3
+													внесения
+													с интервалом в 7 - 10 дней
+												</div>
+												<div class="first-grid__div16 grid-text__block-text right-border">Увеличить размер плода</div>
+											</div>
+											<div class="second-grid">
+												<div class="second-grid__div1 grid-text__title">ПРОДУКТ </div>
+												<div class="second-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="second-grid__div3 grid-text__title">ФЕРТИГАЦИЯ</div>
+												<div class="second-grid__div4 grid-text__title">ЦЕЛЬ </div>
+												<div class="second-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 13.40.13</p>
+												</div>
+												<div class="second-grid__div6 grid-text__block-text">
+													<p>2 л</p>
+													<p>+</p>
+													<p>25 кг</p>
+												</div>
+												<div class="second-grid__div7 grid-text__block-text">Два внесения начиная сразу же после
+													пересадки</div>
+												<div class="second-grid__div8 grid-text__block-text">Простимулировать рост корней и снизить
+													стресс от пересадки, поставить NPK</div>
+												<div class="second-grid__div9 grid-text__subtitle-text">
+													<p>IDROFLORAL 20.20.20</p>
+													<p>+ </p>
+													<p>SUPERNAT 93</p>
+												</div>
+												<div class="second-grid__div10 grid-text__block-text">
+													<p>2.5 кг</p>
+													<p>+</p>
+													<p>1.5 - 2л</p>
+												</div>
+												<div class="second-grid__div11 grid-text__block-text">Внесения каждые 7 дней во время
+													вегетативного роста</div>
+												<div class="second-grid__div12 grid-text__block-text">Обеспечить сбалансированный рост растения
+													и увеличить поглощение питательных веществ</div>
+												<div class="second-grid__div13 grid-text__subtitle-text left-border">
+													<p>IDROFLORAL PLUS 15.5.30
+														(или 12.11.22+8 CaO)
+													</p>
+													<p>+</p>
+													<p>SUPERNAT 93</p>
+												</div>
+												<div class="second-grid__div14 grid-text__block-text ">
+													<p>2,5 кг</p>
+													<p>+</p>
+													<p>1.5 - 2 л</p>
+												</div>
+												<div class="second-grid__div15 grid-text__block-text">
+													Внесения каждые 7 дней с первых цветов
+												</div>
+												<div class="second-grid__div16 grid-text__block-text right-border">Улучшить качественные
+													характеристики
+													плодов (цвет, вкус, аромат, итд.)
+												</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div class="catalog-menu__title">Продукты, применяемые на данной культуре</div>
+													<div class="catalog-menu__subtitle">Продукты Cifo являются результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw horizontal-scroller">
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000 ">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus ">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-1" class="catalog-menu__item betalga ">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+													<a href="product.html#slide-5" class="catalog-menu__item supernat-93 ">
+														<div class=" item__image"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture>
+														</div>
+														<div class="item__name">СУПЕРНАТ 93</div>
+													</a>
+													<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+														<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+														<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+
+
+
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+													ПОДКОРМКА</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">ERT 23 PLUS *
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">1,5 л/га в случае разрезанных клубней,
+													используйте 1 л/га</div>
+												<div class="first-grid__div7 grid-text__block-text">1 внесение при посеве</div>
+												<div class="first-grid__div8 grid-text__block-text">Простимулировать и сделать равномерным
+													прорастание</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">
+													<p>SINERGON 2000*</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 20.20.20</p>
+												</div>
+												<div class="first-grid__div10 grid-text__block-text">
+													<p>2 л/га</p>
+													<p>+</p>
+													<p>2.5 кг/га</p>
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">1 внесение на стадии розетки</div>
+												<div class="first-grid__div12 grid-text__block-text">Снизить абиотический стресс и
+													простимулировать рост растений
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text">
+													<p>ERT 23 PLUS *</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 13.40.13</p>
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>1 л/га</p>
+													<p>+</p>
+													<p>2.5 кг/га</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">1-2 внесение от момента перед цветением до
+													цветения</div>
+												<div class="first-grid__div16 grid-text__block-text">Простимулировать цветение, завязывание
+													клубней и рост</div>
+												<div class="first-grid__div17 grid-text__subtitle-text">IDROFLORAL PLUS
+													12.11.22 + 8CaO
+												</div>
+												<div class="first-grid__div18 grid-text__block-text">2,5 кг/га
+												</div>
+												<div class="first-grid__div19 grid-text__block-text">2-3 внесения после цветения</div>
+												<div class="first-grid__div20 grid-text__block-text">Стимулирует и делает равномерным рост
+													клубней и улучшает их качество</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw">
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+														<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-6" class="catalog-menu__item idrofloral-12-11-22">
+														<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 12-11-22</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="scheme-tabs__body garden">
+								<div class="tabs__body">
+									<div data-tabs class="tabs">
+										<nav data-tabs-titles class="tabs__navigation">
+											<button type="button" class="tabs__title _tab-active">
+												<div class="subclass-tab">
+													<picture><source srcset="img/tomates.webp" type="image/webp"><img class="subclass-tab__image" src="img/tomates.jpg" alt=""></picture>
+													<div class="subclass-tab__title">Яблоня</div>
+												</div>
+											</button>
+										</nav>
+										<div data-tabs-body class="tabs-garden__content">
+											<div class="tabs__body">
+												<div class="first-grid">
+													<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+													<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+													<div class="first-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+														ПОДКОРМКА</div>
+													<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+													<div class="first-grid__div5 grid-text__subtitle-text">ERT 23 PLUS
+													</div>
+													<div class="first-grid__div6 grid-text__block-text">1,5 л</div>
+													<div class="first-grid__div7 grid-text__block-text">
+														<p>Два внесения:</p>
+														<p>- Перед цветением </p>
+														<p>- Полное цветение</p>
+													</div>
+													<div class="first-grid__div8 grid-text__block-text">Простимулировать и сделать равномерным
+														цветение и завязывание плодов</div>
+													<div class="first-grid__div9 grid-text__subtitle-text">ERT 23 PLUS</div>
+													<div class="first-grid__div10 grid-text__block-text">1,5 л
+													</div>
+													<div class="first-grid__div11 grid-text__block-text">2 внесения каждые 7-10 дней после
+														прореживания</div>
+													<div class="first-grid__div12 grid-text__block-text">Увеличить размер плода
+													</div>
+													<div class="first-grid__div13 grid-text__subtitle-text left-border">
+														<p>CET 46 GREEN* </p>
+														<p>+</p>
+														<p>ERT 23 PLUS</p>
+
+													</div>
+													<div class="first-grid__div14 grid-text__block-text">
+														<p>5л + 1л</p>
+
+													</div>
+													<div class="first-grid__div15 grid-text__block-text">Внесения за 15 и 7 дней перед сбором
+														урожая</div>
+													<div class="first-grid__div16 grid-text__block-text right-border">Улучшить и сделать
+														равномерным созревание
+														и окрашивание плодов</div>
+												</div>
+												<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+												<div class="tab__catalog-menu">
+													<div class="catalog-menu__top">
+														<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+															культуре</div>
+														<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+															результатом 50-летнего опыта в
+															питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+															использования в органическом сельском хозяйстве.</div>
+													</div>
+													<div class="catalog-menu__raw">
+														<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+															<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+															<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+														</a>
+														<a href="product.html#slide-2" class="catalog-menu__item set-46-green">
+															<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+															<div class="item__name">ЧИФО-СЕТ 46 ГРИН</div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="scheme-tabs__body field">
+								<div data-tabs class="tabs">
+									<nav data-tabs-titles class="tabs__navigation">
+										<button type="button" class="tabs__title _tab-active">
+											<div class="subclass-tab">
+												<picture><source srcset="img/wheat.webp" type="image/webp"><img class="subclass-tab__image" src="img/wheat.jpg" alt=""></picture>
+												<div class="subclass-tab__title">Пшеница</div>
+											</div>
+										</button>
+										<button type="button" class="tabs__title ">
+											<div class="subclass-tab">
+												<picture><source srcset="img/corn.webp" type="image/webp"><img class="subclass-tab__image" src="img/corn.jpg" alt=""></picture>
+												<div class="subclass-tab__title">Кукуруза</div>
+											</div>
+										</button>
+										<button type="button" class="tabs__title ">
+											<div class="subclass-tab">
+												<picture><source srcset="img/raps.webp" type="image/webp"><img class="subclass-tab__image" src="img/raps.jpg" alt=""></picture>
+												<div class="subclass-tab__title">Рапс</div>
+											</div>
+										</button>
+									</nav>
+
+									<div data-tabs-body class="tabs-vegetablles__content">
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВРЕМЯ ВНЕСЕНИЯ</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA
+														(для яровой пшеницы)
+													</p>
+													<p>-</p>
+													<p>ERT 23 PLUS (для озимой пшеницы)</p>
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">
+													<p>0,5 л/1 тону семян</p>
+													<p>-</p>
+													<p>1 л/1 тону семян</p>
+												</div>
+												<div class="first-grid__div7 grid-text__block-text">Обработка семян</div>
+												<div class="first-grid__div8 grid-text__block-text">Способствовать равномерному прорастанию
+													семян и всхожести растений</div>
+												<div class="first-grid__div9 grid-text__subtitle-text ">
+													<p>SINERGON 2000*</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 20.20.20</p>
+												</div>
+												<div class="first-grid__div10 grid-text__block-text">
+													<p>1-2 л/га</p>
+													<p>+</p>
+													<p>2.5 кг/га</p>
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">Совместно с послевсходовыми гербицидными
+													обработками</div>
+												<div class="first-grid__div12 grid-text__block-text">Чтобы уменьшить побочный
+													эффект от применения гербицидов и усилить кущение, снизить стресс от неблагоприятных условий
+													окружающей среды
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text left-border">
+													<p>ERT 23 PLUS*</p>
+													<p>+</p>
+													<p>SINERGON 2000*</p>
+												</div>
+												<div class="first-grid__div14 grid-text__block-text ">
+													<p>10-15 </p>
+													<p>+</p>
+													<p>25 кг</p>
+												</div>
+												<div class="first-grid__div15 grid-text__block-text ">
+													<p>В течение цветения и роста плодов, несколько внесений с интервалом в 7-10 дней</p>
+												</div>
+												<div class="first-grid__div16 grid-text__block-text right-border">
+													<p>Простимулировать завязывание плодов и рост плодов и увеличить поглощение питательных
+														веществ</p>
+												</div>
+
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div v class="catalog-menu__title">Продукты, применяемые на данной культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw">
+													<a href="product.html#slide-1" class="catalog-menu__item betalga">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+														<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+													</a>
+												</div>
+											</div>
+										</div>
+
+
+
+
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВРЕМЯ ВНЕСЕНИЯ</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">
+													<p>BETALGA</p>
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">
+													<p>0,5 л/1 тону семян</p>
+												</div>
+												<div class="first-grid__div7 grid-text__block-text">Обработка семян</div>
+												<div class="first-grid__div8 grid-text__block-text">Простимулировать и сделать равномерным
+													прорастание семян и всхожесть растений</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">
+													<p>SINERGON 2000*</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 20.20.20</p>
+												</div>
+												<div class="first-grid__div10 grid-text__block-text">
+													<p>1-2 л/га</p>
+													<p>+</p>
+													<p>2.5 кг/га</p>
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">Совместно с послевсходовыми гербицидными
+													обработками</div>
+												<div class="first-grid__div12 grid-text__block-text">Чтобы уменьшить побочный эффект от
+													применения гербицидов и усилить кущение, снизить стресс от неблагоприятных условий
+													окружающей среды
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text left-border">
+													<p>ERT 23 PLUS*</p>
+													<p>+</p>
+													<p>SINERGON 2000*</p>
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>1 л/га</p>
+													<p>+</p>
+													<p>2,5 кг/га</p>
+
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">Одно внесение перед цветением</div>
+												<div class="first-grid__div16 grid-text__block-text right-border">Для улучшения качества</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw">
+													<a href="product.html#slide-1" class="catalog-menu__item betalga">
+														<div class="item__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-БЕТАЛГА</div>
+													</a>
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+														<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+													</a>
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+												</div>
+											</div>
+										</div>
+										<div class="tabs__body">
+											<div class="first-grid">
+												<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+												<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+												<div class="first-grid__div3 grid-text__title">ВРЕМЯ ВНЕСЕНИЯ</div>
+												<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+												<div class="first-grid__div5 grid-text__subtitle-text">
+													<p>SINERGON 2000*</p>
+													<p>+</p>
+													<p>IDROFLORAL PLUS 13.40.13</p>
+												</div>
+												<div class="first-grid__div6 grid-text__block-text">
+													<p>1,5 л/га</p>
+													<p>+</p>
+													<p>2 кг/га</p>
+												</div>
+												<div class="first-grid__div7 grid-text__block-text">Совместно с послевсходовыми гербицидными
+													обработками</div>
+												<div class="first-grid__div8 grid-text__block-text">Для уменьшения побочного действия гербицидов
+													и улучшения вегетативного роста</div>
+												<div class="first-grid__div9 grid-text__subtitle-text">ERT 23 PLUS*</div>
+												<div class="first-grid__div10 grid-text__block-text">1 л/га
+												</div>
+												<div class="first-grid__div11 grid-text__block-text">Перед цветением</div>
+												<div class="first-grid__div12 grid-text__block-text">Для стимуляции цветения и улучшить качество
+													семян и урожайность
+												</div>
+												<div class="first-grid__div13 grid-text__subtitle-text left-border">
+													<p>IDROFLORAL PLUS 15.5.30</p>
+
+
+												</div>
+												<div class="first-grid__div14 grid-text__block-text">
+													<p>2,5 кг/га</p>
+
+												</div>
+												<div class="first-grid__div15 grid-text__block-text">После цветения</div>
+												<div class="first-grid__div16 grid-text__block-text right-border">Для улучшения качества</div>
+											</div>
+											<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+											<div class="tab__catalog-menu">
+												<div class="catalog-menu__top">
+													<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+														культуре</div>
+													<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+														результатом 50-летнего опыта в
+														питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+														использования в органическом сельском хозяйстве.</div>
+												</div>
+												<div class="catalog-menu__raw">
+													<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+														<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+													</a>
+													<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+														<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+														<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+													</a>
+													<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+														<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+													</a>
+													<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+														<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+														<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="scheme-tabs__body decorate">
+								<div class="tabs__body">
+									<div data-tabs class="tabs">
+										<nav data-tabs-titles class="tabs__navigation">
+											<button type="button" class="tabs__title _tab-active">
+												<div class="subclass-tab">
+													<picture><source srcset="img/tulp.webp" type="image/webp"><img class="subclass-tab__image" src="img/tulp.jpg" alt=""></picture>
+													<div class="subclass-tab__title">Тюльпаны</div>
+												</div>
+											</button>
+										</nav>
+
+										<div data-tabs-body class="tabs-garden__content">
+											<div class="tabs__body">
+												<div class="first-grid">
+													<div class="first-grid__div1 grid-text__title">ПРОДУКТ</div>
+													<div class="first-grid__div2 grid-text__title">ДОЗА </div>
+													<div class="first-grid__div3 grid-text__title">Погружение корней</div>
+													<div class="first-grid__div4 grid-text__title">ЦЕЛЬ</div>
+													<div class="first-grid__div5 grid-text__subtitle-text left-border">ERT 23 PLUS
+													</div>
+													<div class="first-grid__div6 grid-text__block-text">0,3 %</div>
+													<div class="first-grid__div7 grid-text__block-text">Опустите луковицу в раствор на 10 минут
+													</div>
+													<div class="first-grid__div8 grid-text__block-text right-border">Стимулирует прорастание
+														луковицы</div>
+												</div>
+												<div class="second-grid">
+													<div class="second-grid__div1 grid-text__title">ПРОДУКТ </div>
+													<div class="second-grid__div2 grid-text__title">Доза/1000 м2 </div>
+													<div class="second-grid__div3 grid-text__title">ФЕРТИГАЦИЯ</div>
+													<div class="second-grid__div4 grid-text__title">ЦЕЛЬ </div>
+													<div class="second-grid__div5 grid-text__subtitle-text">
+														<p>IDROFLORAL 13.40.13</p>
+														<p>+</p>
+														<p>FULVUMIN</p>
+													</div>
+													<div class="second-grid__div6 grid-text__block-text">
+														<p>2,5 кг</p>
+														<p>+</p>
+														<p>1,5-2 л</p>
+													</div>
+													<div class="second-grid__div7 grid-text__block-text">1 внесение после пересадки</div>
+													<div class="second-grid__div8 grid-text__block-text">Простимулировать развитие корней</div>
+													<div class="second-grid__div9 grid-text__subtitle-text">
+														<p>IDROFLORAL 20.20.20</p>
+														<p>+ </p>
+														<p>FULVUMIN</p>
+													</div>
+													<div class="second-grid__div10 grid-text__block-text">
+														<p>2,5 кг</p>
+														<p>+</p>
+														<p>1,5 -2 л</p>
+													</div>
+													<div class="second-grid__div11 grid-text__block-text">1 внесение во время вегетативного роста
+													</div>
+													<div class="second-grid__div12 grid-text__block-text">Простимулировать вегетативный рост</div>
+													<div class="second-grid__div13 grid-text__subtitle-text">
+														<p>IDROFLORAL 12.11.22+8CaO</p>
+														<p>+</p>
+														<p>FULVUMIN</p>
+													</div>
+													<div class="second-grid__div14 grid-text__block-text">
+														<p>2,5 кг</p>
+														<p>+</p>
+														<p>1,5-2 л</p>
+													</div>
+													<div class="second-grid__div15 grid-text__block-text">
+														1-2 внесение начиная с видимых цветочных бутонов
+													</div>
+													<div class="second-grid__div16 grid-text__block-text">Простимулировать формирование цветка
+													</div>
+													<div class="second-grid__div17 grid-text__subtitle-text left-border">
+														<p>IDROFLORAL 15.5.30 + 3MgO</p>
+														<p>+</p>
+														<p>FULVUMIN</p>
+													</div>
+													<div class="second-grid__div18 grid-text__block-text">
+														<p>2,5 кг</p>
+														<p>+</p>
+														<p>1,5-2 л</p>
+													</div>
+													<div class="second-grid__div19 grid-text__block-text">
+														1 внесение на стадии перед цветением
+													</div>
+													<div class="second-grid__div20 grid-text__block-text right-border">Улучшить качество цветка
+													</div>
+												</div>
+												<div class="third-grid">
+													<div class="third-grid__div1 grid-text__title">ПРОДУКТ</div>
+													<div class="third-grid__div2 grid-text__title">Доза/100л воды </div>
+													<div class="third-grid__div3 grid-text__title">ВНЕКОРНЕВАЯ
+														ПОДКОРМКА</div>
+													<div class="third-grid__div4 grid-text__title">ЦЕЛЬ</div>
+													<div class="third-grid__div5 grid-text__subtitle-text">SINERGON 2000
+													</div>
+													<div class="third-grid__div6 grid-text__block-text">250 мл</div>
+													<div class="third-grid__div7 grid-text__block-text">Два внесения во время вегетативного роста
+													</div>
+													<div class="third-grid__div8 grid-text__block-text">Простимулировать вегетативный рост</div>
+													<div class="third-grid__div9 grid-text__subtitle-text left-border">ERT 23 PLUS</div>
+													<div class="third-grid__div10 grid-text__block-text">150 мл
+													</div>
+													<div class="third-grid__div11 grid-text__block-text">Два внесения начиная с видимых цветочных
+														бутонов</div>
+													<div class="third-grid__div12 grid-text__block-text right-border">Простимулировать
+														формирование цветка
+													</div>
+												</div>
+												<div class="post-frid__text">*Эти продукты разрешены для применения в органическом с/х. </div>
+												<div class="tab__catalog-menu">
+													<div class="catalog-menu__top">
+														<div data-watch-once data-watch class="catalog-menu__title">Продукты, применяемые на данной
+															культуре</div>
+														<div data-watch-once data-watch class="catalog-menu__subtitle">Продукты Cifo являются
+															результатом 50-летнего опыта в
+															питании растений. Вся наша продукция соответствует самым строгим правилам, в том числе для
+															использования в органическом сельском хозяйстве.</div>
+													</div>
+													<div class="catalog-menu__raw horizontal-scroller">
+														<a href="product.html#slide-4" class="catalog-menu__item cinergon-2000">
+															<div class="item__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+															<div class="item__name">ЧИФО-СИНЕРГОН 2000</div>
+														</a>
+														<a href="product.html#slide-10" class="catalog-menu__item idrofloral-20-20-20">
+															<div class="item__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+															<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 20-20-20</div>
+														</a>
+														<a href="product.html#slide-3" class="catalog-menu__item ert-23-plus">
+															<div class="item__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+															<div class="item__name">ЧИФО-ЭРТ 23 ПЛЮС</div>
+														</a>
+														<a href="product.html#slide-6" class="catalog-menu__item idrofloral-12-11-22">
+															<div class="item__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+															<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 12-11-22</div>
+														</a>
+														<a href="product.html#slide-9" class="catalog-menu__item idrofloral-15-5-30">
+															<div class="item__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+															<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 15-5-30</div>
+														</a>
+														<a href="product.html#slide-7" class="catalog-menu__item idrofloral-13-40-13">
+															<div class="item__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+															<div class="item__name">ИДРРОФЛОРАЛ ПЛЮС 13-40-13</div>
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?_v=20230910113356"></script>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__main">
+					<div class="footer__left-side">
+						<div class="footer__logo"><picture><source srcset="img/logo-w.webp" type="image/webp"><img src="img/logo-w.png" alt=""></picture></div>
+						<div class="footer__title">Улучшает показатели тысячи промышленных и потребетильских товаров по всему миру.
+						</div>
+						<div class="footer__join">Присоединяйтесь</div>
+						<div class="footer__socials media">
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/vk-white.webp" type="image/webp"><img src="img/icons/vk-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/inst-white.webp" type="image/webp"><img src="img/icons/inst-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/fb-white.webp" type="image/webp"><img src="img/icons/fb-white.png" alt=""></picture></a>
+						</div>
+					</div>
+					<div class="footer__right-side">
+						<nav class="footer__nav">
+							<a data-goto=".top-slider" href="#" class="nav__item">Главная</a>
+							<a data-goto=".about-us" href="#" class="nav__item">О нас</a>
+							<a data-goto=".catalog" href="#" class="nav__item">Каталог продукции</a>
+							<a data-goto=".schemes" href="#" class="nav__item">Схемы питания</a>
+						</nav>
+						<div class="footer__adress-raw">
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Номер телефона:</div>
+								<div class="block-footer__text"><a href="tel:+375 (44) 750-98-99">+375447509899</a></div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Почтовый адрес:</div>
+								<div class="block-footer__text">
+									<p>225702, Брестская обл.,</p>
+									<p>г.Пинск, п/о 2, а/я 22</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Реквизиты:</div>
+								<div class="block-footer__text">
+									<p>ООО " САИФ"</p>
+									<p>УНП 291214221</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Email:</div>
+								<div class="block-footer__text">saif.belarus@gmail.com</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Время работы:</div>
+								<div class="block-footer__text">ПН-ПТ: 9:00 - 18:00</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20230910113356"></script>
+</body>
+
+</html>

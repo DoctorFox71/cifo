@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Cifo</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+	<link rel="stylesheet" href="css/style.min.css?_v=20230910113356">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class=" menu__item header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></li>
+							<li class="menu__item"><a data-goto=".top-slider" href="#" class="menu__link">ГЛАВНАЯ</a></li>
+							<li class="menu__item"><a data-goto=".about-us" href="#" class="menu__link">О&nbspНАС</a></li>
+							<li class="menu__item"><a data-goto=".catalog" href="#" class="menu__link">КАТАЛОГ ПРОДУКЦИИ</a>
+							</li>
+							<li class="menu__item"><a data-goto=".schemes" href="#" class="menu__link">СХЕМЫ ПИТАНИЯ</a></li>
+							<li class="menu__item"><a data-goto=".footer" href="#" class="menu__link">КОНТАКТЫ</a></li>
+							<div class="social__raw">
+								<li class="menu__item social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a>
+								</li>
+						</ul>
+					</nav>
+				</div>
+				<div class="header__social">
+					<ul class="social__list media">
+						<li class="social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a></li>
+					</ul>
+				</div>
+				<button class="header__contact-us green-button" data-popup=".popup">СВЯЗАТЬСЯ С НАМИ</button>
+				<button class="contacts-us__mobile" data-popup=".popup"><img src="img/tel-icon.svg" alt=""></button>
+			</div>
+		</header>
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__form">
+						<div class="form__title">ЗАПОЛНИТЕ ФОРМУ</div>
+						<div class="form__subtitle">И мы свяжемся с Вами в ближайшее время!</div>
+						<div id="notification" style="display: none;">
+							Данные успешно отправлены!
+							<button id="closeNotification">ОК</button>
+						</div>
+						<form method="post" action="send.php" class="form__areas">
+							<input name="NAME" autocomplete="on" placeholder="Ваше имя" class="name-area"></input>
+							<input name="PHONE" required="true" pattern="(\+375|80)(29|25|44|33|17)[0-9]{7}" placeholder="Ваш номер телефона" class="tel-area"></input>
+							<textarea name="MESSAGE" wrap="hard" placeholder="Напишите Ваше сообщение..." class="message-area"></textarea>
+							<button data-popup="#main_popup" type="submit" id="submit-button" class="form__button send-button">ОТПРАВИТЬ</button>
+						</form>
+					</div>
+					<div class="popup__contact-us">
+						<div class="contact-us__title">СВЯЗАТЬСЯ С НАМИ</div>
+						<div class="contact-us__tel">+375 (44) 750-98-99</div>
+						<div class="contact-us__mail">saif.belarus@gmail.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			// При загрузке страницы
+			document.addEventListener("DOMContentLoaded", function() {
+				// При нажатии кнопки "ОК" в уведомлении
+				document.getElementById("closeNotification").addEventListener("click", function() {
+					document.getElementById("notification").style.display = "none";
+				});
+			});
+
+			// Функция для отображения уведомления
+			function showNotification() {
+				document.getElementById("notification").style.display = "block";
+			}
+		</script>
+		<div id="main_popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="main-popup__text-back">
+						Спасибо за то что выбрали нас !
+					</div>
+				</div>
+			</div>
+		</div>
+		<main class="page">
+			<section class="top-slider">
+				<picture><source srcset="img/oval.webp" type="image/webp"><img class="oval-png" src="img/oval.png" alt=""></picture>
+				<div class="top-slider__slider swiper">
+					<div class="top-slider__wrapper swiper-wrapper">
+						<div class="top-slider__slide-1 swiper-slide">
+							<div class="top-slider__slide-block">
+								<div class="slide-block__bg">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="top-slider__container">
+						<div class="top-slider__text slide-block">
+							<h1 class="slide-block__title">CIFO</h1>
+							<h2 class="slide-block__subtitle">Сочетая воображение, вдохновение и инновации, CIFO улучшает показатели
+								тысячи промышленных и потребительских товаров по всему миру.
+
+							</h2>
+							<button data-goto=".catalog" class="slide-block__button green-button">ПЕРЕЙТИ В КАТАЛОГ</button>
+							<button data-goto=".catalog" class="slide-block__button-mob ">КАТАЛОГ</button>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<section class="logo-animation">
+				<div class="logo-animation__container">
+					<div data-watch-once data-watch class="logo-animation__letter-1"><picture><source srcset="img/c-letter.webp" type="image/webp"><img src="img/c-letter.png" alt=""></picture></div>
+					<div data-watch-once data-watch class="logo-animation__letter-2"><picture><source srcset="img/i-letter.webp" type="image/webp"><img src="img/i-letter.png" alt=""></picture></div>
+					<div data-watch-once data-watch class="logo-animation__letter-3"><picture><source srcset="img/f-letter.webp" type="image/webp"><img src="img/f-letter.png" alt=""></picture></div>
+					<div data-watch-once data-watch class="logo-animation__letter-4"><picture><source srcset="img/o-letter.webp" type="image/webp"><img src="img/o-letter.png" alt=""></picture></div>
+				</div>
+			</section>
+			<section class="about-us">
+				<div class="about-us__container">
+					<div data-watch-once data-watch class="about-us__top-block">
+						<div class="about-us__text-block">
+							<h2 class="text-block__title">О НАС</h2>
+							<h3 class="text-block__subtitle subtitle-justify">
+								С 1965 года компания Cifo производит и продает биостимуляторы, аминокислоты и удобрения для всех
+								сельскохозяйственных культур.
+								На сегодняшний момент, у Cifo имеются офисные и производственные мощности на площади более 50000м2. В
+								компании работают более 100 квалифицированных сотрудников. Компания насчитывает более 70 дистрибьюторов
+								в 60 странах по всему миру.
+								Каждый день наши специалисты занимаются непосредственно работой с клиентами, решают многочисленные
+								агрономические задачи, преследуя одну общую цель - приумножение и получение качественного урожая!
+							</h3>
+						</div>
+						<div data-da=".about-us__text-block,480,1" class="about-us__photo-block">
+							<div class="photo-block__first-column">
+								<picture><source srcset="img/about-us-1.webp" type="image/webp"><img src="img/about-us-1.png" alt=""></picture>
+							</div>
+							<div class="photo-block__second-column">
+								<picture><source srcset="img/about-us-2.webp" type="image/webp"><img class="about-us-1" src="img/about-us-2.png" alt=""></picture>
+								<picture><source srcset="img/about-us-3.webp" type="image/webp"><img class="about-us-2" src="img/about-us-3.png" alt=""></picture>
+							</div>
+						</div>
+					</div>
+					<div data-watch-once data-watch class="about-us__bot-block">
+						<div data-da=".text-block-2,480,1" class="about-us__photo-block-2">
+							<div class="photo-block-2__first-raw">
+								<div class="why-us-1"> <picture><source srcset="img/why-us-1.webp" type="image/webp"><img src="img/why-us-1.png" alt=""></picture></div>
+								<div class="why-us-3"> <picture><source srcset="img/why-us-2.webp" type="image/webp"><img src="img/why-us-2.png" alt=""></picture></div>
+							</div>
+							<div class="photo-block__second-raw">
+								<picture><source srcset="img/why-us-3.webp" type="image/webp"><img class="about-us__img-3" src="img/why-us-3.png" alt=""></picture>
+							</div>
+						</div>
+						<div class="about-us__text-block text-block-2">
+							<h2 class="text-block__title">ПОЧЕМУ МЫ</h2>
+							<h3 class="text-block__subtitle">
+								<p class="subtitle__number-1"> Уникальные по своей формуле удобрения</p>
+								<p class="subtitle__number-2"> Иcпользование в производстве удобрений сырья высшего качества</p>
+								<p class="subtitle__number-3"> Профессиональный подход к каждому клиенту</p>
+								<p class="subtitle__number-4"> Полное технологическое сопровождение, составление схем питания
+									растений, с учётом
+									почвенно-климатических условий</p>
+								<p class="subtitle__number-5"> Контроль применения удобрений специалистами компании, на кадом этапе
+									обработки культуры</p>
+								<p class="subtitle__number-6"> Многолетний опыт наших специалистов позволяет сократить неоправданные
+									затраты и повысить
+									рентабельность производства</p>
+							</h3>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="catalog">
+				<div class="catalog__container">
+					<h1 data-watch-once data-watch class="catalog__title">ПРОДУКТЫ</h1>
+					<div data-watch-once data-watch class="catalog__subtitle">Все этапы производства на заводе происходят на
+						современном сертифицированном оборудовании с использованием сырья с высокими качественными показателями, что
+						позволяет получить продукты наивысшего качества.</div>
+					<div class="catalog__raw">
+						<a href="product.html#slide-1">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+								<h1 class="item-card__title">ЧИФО-БЕТАЛГА</h1>
+								<h2 class="item-card__description">Биоактиватор роста и развития корней</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-2">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-2.webp" type="image/webp"><img src="img/catalog-product-2.png" alt=""></picture></div>
+								<h1 class="item-card__title">ЧИФО-СЕТ
+									46 ГРИН</h1>
+								<h2 class="item-card__description">Биоактиватор созревания и окрашивания плодов</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-3">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+								<h1 class="item-card__title">ЧИФО-ЭРТ
+									23 ПЛЮС</h1>
+								<h2 class="item-card__description">Биоактиватор прорастания, цветения и завязывания плодов</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-4">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+								<h1 class="item-card__title">ЧИФО-СИНЕРГОН
+									2000</h1>
+								<h2 class="item-card__description">Биоактиватор роста растений</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-5">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture></div>
+								<h1 class="item-card__title">СУПЕРНАТ 93</h1>
+								<h2 class="item-card__description">Биоактиватор поглощения питательных веществ</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-6">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-6.webp" type="image/webp"><img src="img/catalog-product-6.png" alt=""></picture></div>
+								<h1 class="item-card__title">ИДРРОФЛОРАЛ
+									ПЛЮС 12-11-22+8CaO</h1>
+								<h2 class="item-card__description">Поставляет NPK + Кальций</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-7">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-7.webp" type="image/webp"><img src="img/catalog-product-7.png" alt=""></picture></div>
+								<h1 class="item-card__title">ИДРРОФЛОРАЛ
+									ПЛЮС 13-40-13</h1>
+								<h2 class="item-card__description">Стимулирует укоренение и цветение</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-8">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+								<h1 class="item-card__title">ИДРРОФЛОРАЛ
+									ПЛЮС 15-5-30+3 MgO</h1>
+								<h2 class="item-card__description">Стимулирует созревание</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-9">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-9.webp" type="image/webp"><img src="img/catalog-product-9.png" alt=""></picture></div>
+								<h1 class="item-card__title">ИДРРОФЛОРАЛ
+									ПЛЮС 18-18-18</h1>
+								<h2 class="item-card__description">Стимулирует увеличение размера плода</h2>
+							</div>
+						</a>
+						<a href="product.html#slide-10">
+							<div class="raw__item-card">
+								<div class="item-card__image"><picture><source srcset="img/catalog-product-10.webp" type="image/webp"><img src="img/catalog-product-10.png" alt=""></picture></div>
+								<h1 class="item-card__title">ИДРРОФЛОРАЛ
+									ПЛЮС 20-20-20</h1>
+								<h2 class="item-card__description">Стимулирует увеличение размера плода</h2>
+							</div>
+						</a>
+					</div>
+					<div class="catalog__side-image-left"><picture><source srcset="img/catalog-bg-1.webp" type="image/webp"><img src="img/catalog-bg-1.png" alt=""></picture></div>
+					<div class="catalog__side-image-right"><picture><source srcset="img/catalog-bg-2.webp" type="image/webp"><img src="img/catalog-bg-2.png" alt=""></picture></div>
+				</div>
+			</section>
+			<section class="schemes">
+				<div class="schemes__container">
+					<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+					<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть уточнены согласно
+						конкретным
+						почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими специалистами
+					</div>
+					<h1 class="index">Удобрения, жидкие удобрения, комплексные удобрения, аминокислоты, концентрированные жидкие
+						удобрения, удобрения для огурцов, клубники, помидоров, ягод, удобрения для корневой системы, антистресс,
+					</h1>
+					<div class="schemes__raw">
+						<a data-watch-once data-watch class="block__adress block__berrys" href="scheme.html#tab-0-0">
+							<div class="raw__block">
+								<div class="block__title-first">Ягодные
+									культуры</div>
+								<div class="block__arrow"></div>
+								<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+							</div>
+						</a>
+						<a data-watch-once data-watch class="block__adress block__vegetables" href="scheme.html#tab-0-1">
+							<div class="raw__block">
+								<div class="block__title-first">Овощные
+									культуры</div>
+								<div class="block__arrow"></div>
+								<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+							</div>
+						</a>
+						<a data-watch-once data-watch class="block__adress block__garden" href="scheme.html#tab-0-2">
+							<div class="raw__block">
+								<div class="block__title-first">Садовые
+									культуры</div>
+								<div class="block__arrow"></div>
+								<div class="block__image"><picture><source srcset="img/scheme-img-3.webp" type="image/webp"><img src="img/scheme-img-3.png" alt=""></picture></div>
+							</div>
+						</a>
+						<a data-watch-once data-watch class="block__adress block__field" href="scheme.html#tab-0-3">
+							<div class="raw__block">
+								<div class="block__title-first">Полевые
+									культуры</div>
+								<div class="block__arrow"></div>
+								<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+							</div>
+						</a>
+						<a data-watch-once data-watch class="block__adress block__decorate" href="scheme.html#tab-0-4">
+							<div class="raw__block">
+								<div class="block__title-first">Декоративные
+									культуры</div>
+								<div class="block__arrow"></div>
+								<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</section>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?_v=20230910113356"></script>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__main">
+					<div class="footer__left-side">
+						<div class="footer__logo"><picture><source srcset="img/logo-w.webp" type="image/webp"><img src="img/logo-w.png" alt=""></picture></div>
+						<div class="footer__title">Улучшает показатели тысячи промышленных и потребетильских товаров по всему миру.
+						</div>
+						<div class="footer__join">Присоединяйтесь</div>
+						<div class="footer__socials media">
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/vk-white.webp" type="image/webp"><img src="img/icons/vk-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/inst-white.webp" type="image/webp"><img src="img/icons/inst-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/fb-white.webp" type="image/webp"><img src="img/icons/fb-white.png" alt=""></picture></a>
+						</div>
+					</div>
+					<div class="footer__right-side">
+						<nav class="footer__nav">
+							<a data-goto=".top-slider" href="#" class="nav__item">Главная</a>
+							<a data-goto=".about-us" href="#" class="nav__item">О нас</a>
+							<a data-goto=".catalog" href="#" class="nav__item">Каталог продукции</a>
+							<a data-goto=".schemes" href="#" class="nav__item">Схемы питания</a>
+						</nav>
+						<div class="footer__adress-raw">
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Номер телефона:</div>
+								<div class="block-footer__text"><a href="tel:+375 (44) 750-98-99">+375447509899</a></div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Почтовый адрес:</div>
+								<div class="block-footer__text">
+									<p>225702, Брестская обл.,</p>
+									<p>г.Пинск, п/о 2, а/я 22</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Реквизиты:</div>
+								<div class="block-footer__text">
+									<p>ООО " САИФ"</p>
+									<p>УНП 291214221</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Email:</div>
+								<div class="block-footer__text">saif.belarus@gmail.com</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Время работы:</div>
+								<div class="block-footer__text">ПН-ПТ: 9:00 - 18:00</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20230910113356"></script>
+</body>
+
+</html>

@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Cifo</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20230910113356">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></div>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class=" menu__item header__logo"> <a href="index.html"><picture><source srcset="img/logo2.webp" type="image/webp"><img src="img/logo2.png" alt=""></picture></a></li>
+							<li class="menu__item"><a href="index.html#top-slider" class="menu__link">ГЛАВНАЯ</a></li>
+							<li class="menu__item"><a href="index.html#about-us" class="menu__link">О&nbspНАС</a></li>
+							<li class="menu__item"><a href="index.html#catalog" class="menu__link">КАТАЛОГ ПРОДУКЦИИ</a>
+							</li>
+							<li class="menu__item"><a href="index.html#schemes" class="menu__link">СХЕМЫ ПИТАНИЯ</a></li>
+							<li class="menu__item"><a data-goto=".footer" href="#" class="menu__link">КОНТАКТЫ</a></li>
+							<div class="social__raw">
+								<li class="menu__item social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a>
+								</li>
+								<li class="menu__item social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a>
+								</li>
+
+						</ul>
+					</nav>
+				</div>
+				<div class="header__social">
+					<ul class="social__list media">
+						<li class="social__item"><a class="vk-icon" href="#"><picture><source srcset="img/icons/vk.webp" type="image/webp"><img src="img/icons/vk.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="inst-icon" href="#"><picture><source srcset="img/icons/inst.webp" type="image/webp"><img src="img/icons/inst.png" alt=""></picture></a></li>
+						<li class="social__item"><a class="facebook-icon" href="#"><picture><source srcset="img/icons/fb.webp" type="image/webp"><img src="img/icons/fb.png" alt=""></picture></a></li>
+					</ul>
+				</div>
+				<button class="header__contact-us" data-popup=".popup">СВЯЗАТЬСЯ С НАМИ</button>
+				<button class="contacts-us__mobile" data-popup=".popup"><img src="img/tel-icon.svg" alt=""></button>
+			</div>
+		</header>
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="popup__form">
+						<div class="form__title">ЗАПОЛНИТЕ ФОРМУ</div>
+						<div class="form__subtitle">И мы свяжемся с Вами в ближайшее время!</div>
+						<div id="notification" style="display: none;">
+							Данные успешно отправлены!
+							<button id="closeNotification">ОК</button>
+						</div>
+						<form method="post" action="send.php" class="form__areas">
+							<input name="NAME" autocomplete="on" placeholder="Ваше имя" class="name-area"></input>
+							<input name="PHONE" required="true" pattern="(\+375|80)(29|25|44|33|17)[0-9]{7}" placeholder="Ваш номер телефона" class="tel-area"></input>
+							<textarea name="MESSAGE" wrap="hard" placeholder="Напишите Ваше сообщение..." class="message-area"></textarea>
+							<button data-popup="#main_popup" type="submit" id="submit-button" class="form__button send-button">ОТПРАВИТЬ</button>
+						</form>
+					</div>
+					<div class="popup__contact-us">
+						<div class="contact-us__title">СВЯЗАТЬСЯ С НАМИ</div>
+						<div class="contact-us__tel">+375 (44) 750-98-99</div>
+						<div class="contact-us__mail">saif.belarus@gmail.com</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<script>
+			// При загрузке страницы
+			document.addEventListener("DOMContentLoaded", function() {
+				// При нажатии кнопки "ОК" в уведомлении
+				document.getElementById("closeNotification").addEventListener("click", function() {
+					document.getElementById("notification").style.display = "none";
+				});
+			});
+
+			// Функция для отображения уведомления
+			function showNotification() {
+				document.getElementById("notification").style.display = "block";
+			}
+		</script>
+		<div id="main_popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<div class="main-popup__text-back">
+						Спасибо за то что выбрали нас !
+					</div>
+				</div>
+			</div>
+		</div>
+		<main class="page">
+			<div class="product-bg"></div>
+			<section class="product__main-block-tabs">
+				<div class="main-block-tabs__container">
+					<div class="tabs__slider swipers">
+						<div class="tabs__wrapper swiper-wrapper">
+							<div data-hash="slide-1" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div data-tabs-hash class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"><a href="product.html#slide-10"><picture><source srcset="img/catalog-product-10-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-10-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-1"><picture><source srcset="img/catalog-product-1-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-1-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-2"><picture><source srcset="img/catalog-product-2-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-2-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-1.webp" type="image/webp"><img src="img/catalog-product-1.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<h2 data-watch-once data-watch class="description-text__subtitle">
+												BETALGA это инновационное специальное удобрение, разработанное для стимулирования быстрого
+												формирования корней. В формуле содержатся высоко- концентрированный экстракт водорослей
+												Macrocystis, Ascophyllum, Sargassum и аминокислоты. BETALGA стимулирует формирование придаточных
+												и всасывающих корневых волосков, развитие корневого аппарата в глубину и ширину, поставляя р а с
+												т е н и ю большое количество бетаинов, альгиновой кислоты, микроэлементов и естественных
+												стимуляторов роста. BETALGA поставляет аминокислоты как быстро- доступный источник для
+												первичного метаболизма, сбалансированные естественные промотры роста и стимулирует прорастание
+												семян.
+											</h2>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">Чифо-Беталга</h1>
+											<h2 class="product__name-description">Биоактиватор роста и развития корней
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">Общий азот (N) </p>
+														<p class="left-block__item">Органический азот (N) </p>
+														<p class="left-block__item ">Амидный азот (N) </p>
+														<p class="left-block__item ">Органическое вещество </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">12%</p>
+														<p class="right-block__item">3.4%</p>
+														<p class="right-block__item">8.6%</p>
+														<p class="right-block__item">20.5%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab component-tab">Комплекс Аминокислот, водорослевые экстракты
+													Ascophyllum nodosum (Аскофиллум узловатый), Macrocystis integrifolia (Макроцистис
+													цельнолистный), и Sargassum (Саргассум). </div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">pH (1% раствор) </p>
+														<p class="left-block__item">Плотность (при 20оС) </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">7.4 + 0.5</p>
+														<p class="right-block__item">1,20 кг/л</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												Продукт может быть смешан со всеми составами, кроме продуктов на основе Меди. Рекомендуется
+												провести простой тест на смешивание.
+											</div>
+											<div class="compound__body">
+												1 л – 5 л
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-2" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-1">
+													<picture><source srcset="img/catalog-product-1-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-1-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-2"><picture><source srcset="img/catalog-product-2-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-2-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-3"><picture><source srcset="img/catalog-product-3-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-3-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-2.webp" type="image/webp"><img src="img/catalog-product-2.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												CET 46 GREEN улучшает процесс созревания плодов благодаря наличию растительных экстрактов,
+												богатых Оксилипинами. Они вместе с Фенилаланином усиливают биосинтетическую активность
+												антоцианов, пигментов, главным образом, ответственных за окраску плодов. CET 46 GREEN также
+												поставляет моносахариды в качестве источника углерода и энергии для первичного метаболизма
+												растений. Оксилипины укрепляют клеточные стенки, вызывая естественный синтез лигнина и
+												монолигнолов.
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">ЧИФО-СЕТ 46 грин</h1>
+											<h2 class="product__name-description">Биоактивтор созревания и окрашивания плодов
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">Общий Азот (N) </p>
+														<p class="left-block__item">Органический Азот (N) </p>
+														<p class="left-block__item ">Амидный Азот (N) </p>
+														<p class="left-block__item">Оксид калия (К2О) водорастворимый </p>
+														<p class="left-block__item ">Органическое вещество </p>
+
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">3%</p>
+														<p class="right-block__item">2%</p>
+														<p class="right-block__item">1%</p>
+														<p class="right-block__item">7%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">Фенилаланин, метионин, растительные экстракты, моносахариды
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">pH (1%раствор) </p>
+														<p class="left-block__item">Плотность (при 20°C)</p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">6.9 + 0.5</p>
+														<p class="right-block__item">1,27 кг/л</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">Продукт может быть смешан со всеми
+													составами, кроме продуктов на основе Меди и Серы, минеральных масел и эмульсий. Рекомендуется
+													провести простой тест на смешивание. CIFO ответственна только за состав препарата и не несет
+													ответственности за урон, нанесенный вследствие неправильного/ неподходящего использования
+													продукта. </div>
+											</div>
+											<div class="compound__body">
+												1-5 л
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-2">
+												<div class="raw__block">
+													<div class="block__title-first">Садовые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-3.webp" type="image/webp"><img src="img/scheme-img-3.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-3" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-2">
+													<picture><source srcset="img/catalog-product-2-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-2-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-3"><picture><source srcset="img/catalog-product-3-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-3-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-4"><picture><source srcset="img/catalog-product-4-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-4-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-3.webp" type="image/webp"><img src="img/catalog-product-3.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												ERT 23 PLUS это биостимулятор, специально предназаченный для стимуляции равномерности
+												прорастания и цветения, процессов оплодотворения и завязывания плодов. Он усиливает метаболизм
+												растения в репродуктивную фазу. Формула содержит растительные и водорослевый (Macrocystis
+												integrifolia) экстракты, которые поставляют аминокислоты, витамины, полисахариды для активации
+												метаболических процессов растений. Более того, продукт содержит глицинбетаин, который
+												способствует восстановлению стрессов и фолиевую кислоту (ценный витамин, необходимый для роста
+												и деления клеток, репликации ДНК и синтеза протеинов в клетках).
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">ЧИФО ЭРТ-23-ПЛЮС</р>
+												<h2 class="product__name-description">Биоактиватор прорастания, цветения и завязывания плодов
+												</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">Органический Азот (N)</p>
+														<p class="left-block__item">Органическое вещество </p>
+														<p class="left-block__item ">Оксид Калия (K2O) :</p>
+														<p class="left-block__item">Бетаины </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">1.5%</p>
+														<p class="right-block__item">18.9%</p>
+														<p class="right-block__item">6.1%</p>
+														<p class="right-block__item">10%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">Водорослевые экстракты (Macrocystis integrifolia), Фолиевая
+														кислота, Глицинбетаин, Растительные экстракты (лапчатка). </div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">pH (1%раствор) </p>
+														<p class="left-block__item">Плотность (при 20°C)</p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">8.3 + 0.5</p>
+														<p class="right-block__item">1,21 кг/л</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">
+													Продукт может быть смешан со всеми составами, кроме продуктов на основе Меди и Серы,
+													минеральных масел и эмульсий. Рекомендуется провести простой тест на смешивание. CIFO
+													ответственна только за состав препарата и не несет ответственности за урон, нанесенный
+													вследствие неправильного/ неподходящего использования продукта.
+												</div>
+											</div>
+											<div class="compound__body">
+												0,5 л, 1 л
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-2">
+												<div class="raw__block">
+													<div class="block__title-first">Садовые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-3.webp" type="image/webp"><img src="img/scheme-img-3.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-4" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-3">
+													<picture><source srcset="img/catalog-product-3-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-3-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-4"><picture><source srcset="img/catalog-product-4-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-4-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-5"><picture><source srcset="img/catalog-product-5-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-5-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-4.webp" type="image/webp"><img src="img/catalog-product-4.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												SINERGON 2000 это специальное удобрение, содержащее аминокислоты растительного происхождения,
+												полученные в ходе энзиматического гидролиза, и водорослевый экстракт (Macrocystis
+												integrifolia), полученный путем инновационного механического процесса, идущего при низких
+												температурах, без добавления химических компонентов. Таким образом, все действующие вещества
+												продукта остаются в своей природной «биологически-активной» форме для стимулирования
+												вегетативного метаболизма растений. В частности, Синергон 2000:
+												<p>- Стимулирует синтез белков и природных стимуляторов роста, поставляя триптофан –
+													аминокислоту,
+													предшественник биосинтеза ауксина.</p>
+												<p>- Стимулирует вегетативный рост растения, позволяя растению быстро восстанавливаться после
+													физиологического или стресса от условий окружающей среды</p>
+												<p>- Повышает эффективность ассоциированных продуктов, таких как удобрений, агрохимикатов,
+													гербицидов, и тд</p>
+												<p>- Улучшает метаболическую активность, позволяющую растениям расти и достигать хороших
+													результатов с точки зрения урожайности и качественных характеристик даже в условиях стресса
+												</p>
+
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">Чифо СИНЕРГОН-2000</h1>
+											<h2 class="product__name-description">Биоактиватор роста растений
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" data-tabs class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">Органический азот (N) </p>
+														<p class="left-block__item">Органическое вещество </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">6%</p>
+														<p class="right-block__item">43.4%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">Водорослевый экстракт Macrocystis integrifolia, Аминокислоты
+														растительного происхождения </div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">pH (1%раствор) </p>
+														<p class="left-block__item">Плотность (при 20°C)</p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">6.9 + 0.5</p>
+														<p class="right-block__item">1,27 кг/л</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">Продукт может быть смешан со всеми
+													составами, кроме продуктов на основе Меди и Серы, минеральных масел и эмульсий. Рекомендуется
+													провести простой тест на смешивание. </div>
+											</div>
+											<div class="compound__body">
+												1 л, 5 л, 10 л
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-5" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-4">
+													<picture><source srcset="img/catalog-product-4-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-4-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-5"><picture><source srcset="img/catalog-product-5-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-5-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-6"><picture><source srcset="img/catalog-product-6-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-6-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-5.webp" type="image/webp"><img src="img/catalog-product-5.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												<p>SUPERNAT 93 это активатор почвенного плодородия и поглощения питательных веществ, он очень
+													эффективен даже в «неструктурированных» почвах. Формула содержит фульвокислоты и богата
+													органическим веществом, препарат улучшает развитие корневой системы, стимулируя эндогенный
+													синтез ауксина, повышает биологическую активность почвы, стимулируя ферментативные процессы и
+													размножение почвенных микроорганизмов. </p>
+												<p>SUPERNAT 93 улучшает поглощение питательных веществ корнями, увеличивая эффективность
+													совместно-вносимых удобрений.</p>
+												<p> Регулярное использование SUPERNAT 93 отдельно или совместно с NPK удобрениями:</p>
+												<p>- восстанавливает обедненные, «неструктурированные» почвы и улучшает циркуляцию воздуха и
+													воды в них</p>
+												<p>- усиливает вегетативный рост и репродуктивное развитие</p>
+												<p>- определяет высокий урожай</p>
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">СУПЕРНАТ 93</h1>
+											<h2 class="product__name-description">Биоактиватор поглощения питательных веществ
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">Органическое вещество</p>
+														<p class="left-block__item">фульвокислоты</p>
+														<p class="left-block__item tab-space tab-title">В сухом веществе:</p>
+														<p class="left-block__item">Органического вещества</p>
+														<p class="left-block__item tab-space tab-title">Гуминифицированного органического вещества
+															как
+															процент
+															от:</p>
+														<p class="left-block__item">Органического вещества</p>
+														<p class="left-block__item">Органического азота (N)</p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">40.3%</p>
+														<p class="right-block__item">24%</p>
+														<p class="right-block__item tab-space">&nbsp</p>
+														<p class="right-block__item">88.6%</p>
+														<p class="right-block__item tab-space">&nbsp</p>
+														<p class="right-block__item">68.7%</p>
+														<p class="right-block__item">2.1%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">Фульвокислоты</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">pH (1%раствор) </p>
+														<p class="left-block__item">Плотность (при 20°C)</p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">4,6±0,5</p>
+														<p class="right-block__item">1,20кг/л</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												-
+												<div class="compound__compound-tab compatibility-tab"></div>
+											</div>
+											<div class="compound__body">
+												0,5 - 1л
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-6" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-5">
+													<picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-8"><picture><source srcset="img/catalog-product-6-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-6-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-8"><picture><source srcset="img/catalog-product-7-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-7-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-8.webp" type="image/webp"><img src="img/catalog-product-8.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												IDROFLORAL PLUS 12-11-22+8СаО – это удобрения NPK с мезо- и- микроэлементами, хелатированные
+												EDTA, в форме порошка, при изготовлении которого используется исключительно чистое сырье
+												высокого качества, предназначенное для всех фертигационных систем на открытых полях и в
+												теплицах. Может использоваться на всех культурах для обеспечения сбалансированного вегетативного
+												роста, оптимального увеличения плодов и достижения высоких стандартов качества.
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">Идррофлорал плюс 12-11-22+8CaO</h1>
+											<h2 class="product__name-description">Поставляет NPK + Кальций
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">N</p>
+														<p class="left-block__item">P2O5 </p>
+														<p class="left-block__item ">K2O</p>
+														<p class="left-block__item">CaO </p>
+														<p class="left-block__item ">Cu(ЭДТА) </p>
+														<p class="left-block__item">Fe(ЭДТА) </p>
+														<p class="left-block__item">Mn(ЭДТА) </p>
+														<p class="left-block__item">Zn(ЭДТА) </p>
+														<p class="left-block__item">Mo </p>
+														<p class="left-block__item">B </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">12%</p>
+														<p class="right-block__item">11%</p>
+														<p class="right-block__item">22%</p>
+														<p class="right-block__item">8%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.02%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.005%</p>
+														<p class="right-block__item">0.01%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">-</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">- </p>
+														<p class="left-block__item"></p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">-</p>
+														<p class="right-block__item"></p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">
+
+												</div>
+											</div>
+											<div class="compound__body">
+												25 кг
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-7" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-6">
+													<picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-7"><picture><source srcset="img/catalog-product-7-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-7-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-8"><picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-8.webp" type="image/webp"><img src="img/catalog-product-8.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												IDROFLORAL PLUS 13-40-13 – это водорастворимое порошковое удобрение, разработанное для
+												капельного орошения на открытых пространствах и в теплицах, а также для листовых обработок.
+												Соотношение между макроэлементами, как правило, подходит для средней и последней стадий
+												вегетативного цикла растений и удовлетворяет потребности растений в поглощении калия. Азот
+												присутствует как в готовой к употреблению форме (расщепление нитратов), так и в пролонгированной
+												форме (расщепление аммиака и мочевины) для обеспечения непрерывной активности элемента.
+												Присутствие серы и физиологическая кислая реакция состава обеспечивают максимальное поглощение
+												питательных веществ растениями.
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">ИДРРОФЛОРАЛ
+												ПЛЮС 13-40-13</h1>
+											<h2 class="product__name-description">Стимулирует укоренение и цветение
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">N </p>
+														<p class="left-block__item">P2O5 </p>
+														<p class="left-block__item ">K2O </p>
+														<p class="left-block__item">Cu(ЭДТА) </p>
+														<p class="left-block__item ">Fe(ЭДТА) </p>
+														<p class="left-block__item">Mn(ЭДТА) </p>
+														<p class="left-block__item">Zn(ЭДТА) </p>
+														<p class="left-block__item">Mo </p>
+														<p class="left-block__item">B </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">13%</p>
+														<p class="right-block__item">40%</p>
+														<p class="right-block__item">13%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.02%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.005%</p>
+														<p class="right-block__item">0.01%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">Фульвокислоты</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">- </p>
+														<p class="left-block__item"></p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">-</p>
+														<p class="right-block__item"></p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">-</div>
+											</div>
+											<div class="compound__body">
+												25 кг
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-8" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-7">
+													<picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-8"><picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-9"><picture><source srcset="img/catalog-product-9-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-9-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-8.webp" type="image/webp"><img src="img/catalog-product-8.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												IDROFLORAL PLUS 15-5-30+3MgO – это водорастворимое удобрение, предназначенное для всех
+												ирригационных систем на открытых полях и в теплицах, а также листовых подкормках. Соотношение
+												между макроэлементами, высоким содержанием калия, как правило, является благоприятным на
+												последних стадиях развития сельскохозяйственных культур и отвечает потребностям в питании
+												ненасыщенных калием растений. Благодаря кислой природе состава, он обеспечивает максимальное
+												усвоение питательных веществ для растений. Содержащиеся в нем микроэлементы, такие как бор,
+												медь, железо, молибден, марганец и цинк, обеспечивают удобрение, фотосинтез и меристематическое
+												развитие растений, для достижения сбалансированного вегетативного роста, оптимального роста
+												плодов и продуктов высокого стандарта качества.
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">ИДРРОФЛОРАЛ
+												ПЛЮС 15-5-30+3 MgO</h1>
+											<h2 class="product__name-description">Стимулирует созренвание
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">N </p>
+														<p class="left-block__item">P2O5 </p>
+														<p class="left-block__item ">K2O </p>
+														<p class="left-block__item">MgO </p>
+														<p class="left-block__item ">Cu(ЭДТА) </p>
+														<p class="left-block__item">Fe(ЭДТА) </p>
+														<p class="left-block__item">Mn(ЭДТА) </p>
+														<p class="left-block__item">Zn(ЭДТА) </p>
+														<p class="left-block__item">Mo </p>
+														<p class="left-block__item">B </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">15%</p>
+														<p class="right-block__item">5%</p>
+														<p class="right-block__item">30%</p>
+														<p class="right-block__item">3%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.02%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.005%</p>
+														<p class="right-block__item">0.01%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">-</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">-</p>
+														<p class="left-block__item"></p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">-</p>
+														<p class="right-block__item"></p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">-</div>
+											</div>
+											<div class="compound__body">
+												25 кг
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-9" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item"> <a href="product.html#slide-8">
+													<picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-9"><picture><source srcset="img/catalog-product-9-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-9-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-10"><picture><source srcset="img/catalog-product-10-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-10-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-8.webp" type="image/webp"><img src="img/catalog-product-8.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												IDROFLORAL PLUS 18-18-18 – это удобрения NPK с мезо- и -микроэлементами, хелатированные EDTA, в
+												форме порошка, при изготовлении которого используется исключительно чистое сырье высокого
+												качества, предназначенное для всех фертигационных систем на открытых полях и в теплицах.
+												Содержащиеся в нём микроэлементы, такие как бор, медь, железо, молибден, марганец и цинк,
+												обеспечивают удобрение, фотосинтез и меристематическое развитие, которые являются основными
+												биологическими функциями растения, для достижения сбалансированного вегетативного роста,
+												оптимального роста плодов и продуктов высокого стандарта качества.
+											</div>
+											<button class="description-text__button-cost " data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">ИДРРОФЛОРАЛ
+												ПЛЮС 18-18-18</h1>
+											<h2 class="product__name-description">Стимулирует увеличение размера плода
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">N </p>
+														<p class="left-block__item">P2O5 </p>
+														<p class="left-block__item ">K2O </p>
+														<p class="left-block__item">SO3 </p>
+														<p class="left-block__item ">Cu(ЭДТА) </p>
+														<p class="left-block__item">Fe(ЭДТА) </p>
+														<p class="left-block__item">Mn(ЭДТА) </p>
+														<p class="left-block__item">Zn(ЭДТА) </p>
+														<p class="left-block__item">Mo </p>
+														<p class="left-block__item">B </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">18%</p>
+														<p class="right-block__item">18%</p>
+														<p class="right-block__item">18%</p>
+														<p class="right-block__item">8%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.07%</p>
+														<p class="right-block__item">0.04%</p>
+														<p class="right-block__item">0.025%</p>
+														<p class="right-block__item">0.005%</p>
+														<p class="right-block__item">0.025%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">-</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">- </p>
+														<p class="left-block__item"></p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">-</p>
+														<p class="right-block__item"></p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">-</div>
+											</div>
+											<div class="compound__body">
+												25 кг
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+							<div data-hash="slide-10" class="tabs__slide swiper-slide">
+								<div class="main-block-tabs__body">
+									<div class="main-block-tabs__block">
+										<div class="block__supernat-93">
+											<div class="supernat-93__item">
+												<a href="product.html#slide-9">
+													<picture><source srcset="img/catalog-product-8-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-8-named.png" alt=""></picture>
+												</a>
+											</div>
+											<div class="supernat-93__item"><a href="product.html#slide-10"><picture><source srcset="img/catalog-product-10-named.webp" type="image/webp"><img class="side-slider-img-big" src="img/catalog-product-10-named.png" alt=""></picture></a></div>
+											<div class="supernat-93__item"><a href="product.html#slide-1"><picture><source srcset="img/catalog-product-1-named.webp" type="image/webp"><img class="side-slider-img" src="img/catalog-product-1-named.png" alt=""></picture></a></div>
+										</div>
+										<button type="button" class="swiper-button-prev-product"></button>
+										<button type="button" class="swiper-button-next-product"></button>
+										<div class="product__description-photo"><picture><source srcset="img/catalog-product-8.webp" type="image/webp"><img src="img/catalog-product-8.png" alt=""></picture></div>
+										<div class="product__description-text">
+											<div data-watch-once data-watch class="description-text__title">ОПИСАНИЕ</div>
+											<div data-watch-once data-watch class="description-text__subtitle">
+												IDROFLORAL PLUS 20-20-20 - это водорастворимое удобрение, которое изготавливается из чрезвычайно
+												чистого сырья с высоким разрешением, предназначено для всех систем орошения на открытых полях и
+												в теплицах, а также может применяться для листовой обработки. Соотношение между макроэлементами
+												(1: 1: 1) подходит для всех этапов жизни растений и отвечает потребностям растений в общих
+												питательных веществах. Содержащиеся в нем микроэлементы, такие как бор, медь, железо, молибден,
+												марганец и цинк, обеспечивают удобрение, фотосинтез и меристематическое развитие, которые
+												являются основными биологическими функциями растения, для достижения сбалансированного
+												вегетативного роста, оптимального роста плодов и продуктов высокого стандарта качества.
+											</div>
+											<button class="description-text__button-cost" data-popup=".popup">УЗНАТЬ СТОИМОСТЬ</button>
+										</div>
+										<div class="product__header">
+											<h1 class="product__name">Идррофлорал плюс 20-20-20</h1>
+											<h2 class="product__name-description">Стимулирует увеличение размера плода
+											</h2>
+										</div>
+									</div>
+									<div data-tabs data-tabs-animate="1000" class="compound">
+										<nav data-tabs-titles class="compound__navigation">
+											<button type="button" class="compound__title _tab-active">СОСТАВ</button>
+											<button type="button" class="compound__title">КОМПОНЕНТЫ</button>
+											<button type="button" class="compound__title">ФИЗИКО-ХИМИЧЕСКИЕ ПАРАМЕТРЫ</button>
+											<button type="button" class="compound__title">СОВМЕСТИМОСТЬ</button>
+											<button type="button" class="compound__title">УПАКОВКА</button>
+										</nav>
+										<div data-tabs-body class="compound__content">
+											<div class="compound__body">
+												<div class="compound__compound-tab consist-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">N </p>
+														<p class="left-block__item">P2O5</p>
+														<p class="left-block__item ">K2O </p>
+														<p class="left-block__item">Cu(ЭДТА) </p>
+														<p class="left-block__item ">Fe(ЭДТА) </p>
+														<p class="left-block__item">Mn(ЭДТА) </p>
+														<p class="left-block__item">Zn(ЭДТА) </p>
+														<p class="left-block__item">Mo </p>
+														<p class="left-block__item">B </p>
+													</div>
+													<div class="compound-tab__right-block">
+														<p class="right-block__item">20%</p>
+														<p class="right-block__item">20%</p>
+														<p class="right-block__item">20%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.02%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.01%</p>
+														<p class="right-block__item">0.005%</p>
+														<p class="right-block__item">0.01%</p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab components-tab">
+													<div class="compound-tab__item">-</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab parametrs-tab">
+													<div class="compound-tab__left-block">
+														<p class="left-block__item">-</p>
+														<p class="left-block__item"></p>
+													</div>
+													<div class="compound-tav__right-block">
+														<p class="right-block__item">-</p>
+														<p class="right-block__item"></p>
+													</div>
+												</div>
+											</div>
+											<div class="compound__body">
+												<div class="compound__compound-tab compatibility-tab">-</div>
+											</div>
+											<div class="compound__body">
+												25 кг
+											</div>
+										</div>
+									</div>
+								</div>
+								<section class="schemes">
+									<div class="schemes__container">
+										<div data-watch-once data-watch class="schemes__title">СХЕМЫ ПРИМЕНЕНИЯ</div>
+										<div data-watch-once data-watch class="schemes__subtitle">Дозы приблизительные и должны быть
+											уточнены согласно конкретным
+											почвенно-климатическим и агрономическим условиям. Пожалуйста, проконсультируйтесь с нашими
+											специалистами
+										</div>
+										<div class="schemes__raw">
+											<a class="block__adress" href="scheme.html#tab-0-0">
+												<div class="raw__block">
+													<div class="block__title-first">Ягодные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-1.webp" type="image/webp"><img src="img/scheme-img-1.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-1">
+												<div class="raw__block">
+													<div class="block__title-first">Овощные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-2.webp" type="image/webp"><img src="img/scheme-img-2.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-3">
+												<div class="raw__block">
+													<div class="block__title-first">Полевые
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-5.webp" type="image/webp"><img src="img/scheme-img-5.png" alt=""></picture></div>
+												</div>
+											</a>
+											<a class="block__adress" href="scheme.html#tab-0-4">
+												<div class="raw__block">
+													<div class="block__title-first">Декоративные
+														культуры</div>
+													<div class="block__arrow"></div>
+													<div class="block__image"><picture><source srcset="img/scheme-img-4.webp" type="image/webp"><img src="img/scheme-img-4.png" alt=""></picture></div>
+												</div>
+											</a>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="swiper-pagination"></div>
+						<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+
+						<!-- Якщо потрібен скролбар -->
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</section>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?_v=20230910113356"></script>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__main">
+					<div class="footer__left-side">
+						<div class="footer__logo"><picture><source srcset="img/logo-w.webp" type="image/webp"><img src="img/logo-w.png" alt=""></picture></div>
+						<div class="footer__title">Улучшает показатели тысячи промышленных и потребетильских товаров по всему миру.
+						</div>
+						<div class="footer__join">Присоединяйтесь</div>
+						<div class="footer__socials media">
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/vk-white.webp" type="image/webp"><img src="img/icons/vk-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/inst-white.webp" type="image/webp"><img src="img/icons/inst-white.png" alt=""></picture></a>
+							<a class="socials__item" href="#"><picture><source srcset="img/icons/fb-white.webp" type="image/webp"><img src="img/icons/fb-white.png" alt=""></picture></a>
+						</div>
+					</div>
+					<div class="footer__right-side">
+						<nav class="footer__nav">
+							<a data-goto=".top-slider" href="#" class="nav__item">Главная</a>
+							<a data-goto=".about-us" href="#" class="nav__item">О нас</a>
+							<a data-goto=".catalog" href="#" class="nav__item">Каталог продукции</a>
+							<a data-goto=".schemes" href="#" class="nav__item">Схемы питания</a>
+						</nav>
+						<div class="footer__adress-raw">
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Номер телефона:</div>
+								<div class="block-footer__text"><a href="tel:+375 (44) 750-98-99">+375447509899</a></div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Почтовый адрес:</div>
+								<div class="block-footer__text">
+									<p>225702, Брестская обл.,</p>
+									<p>г.Пинск, п/о 2, а/я 22</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Реквизиты:</div>
+								<div class="block-footer__text">
+									<p>ООО " САИФ"</p>
+									<p>УНП 291214221</p>
+								</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Email:</div>
+								<div class="block-footer__text">saif.belarus@gmail.com</div>
+							</div>
+							<div class="adress-raw__block-footer">
+								<div class="block-footer__title">Время работы:</div>
+								<div class="block-footer__text">ПН-ПТ: 9:00 - 18:00</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.min.js?_v=20230910113356"></script>
+</body>
+
+</html>
